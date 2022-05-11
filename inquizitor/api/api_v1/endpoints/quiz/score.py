@@ -1,4 +1,4 @@
-from flask import jsonify
+
 from sqlmodel import Session
 from typing import Any, List, Union
 
@@ -10,7 +10,7 @@ from inquizitor.api import deps
 
 router = APIRouter()
 
-@router.get("/{index}")
+@router.get("/{index}/scores")
 async def read_quiz_scores(
 	*,
 	db: Session = Depends(deps.get_db),
