@@ -31,10 +31,10 @@ class Settings(BaseSettings):
 	POSTGRES_PORT : str = os.getenv("POSTGRES_PORT", 5432)
 	POSTGRES_DB : str = os.getenv("POSTGRES_db", "tdd")
 
-	if USE_SQLITE:
-		SQLALCHEMY_DATABASE_URI = "sqlite:///inquizitor/data.db"
-	else:
-		SQLALCHEMY_DATABASE_URI = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
+	# if USE_SQLITE:
+	# 	SQLALCHEMY_DATABASE_URI = "sqlite:///inquizitor/data.db"
+	# else:
+	SQLALCHEMY_DATABASE_URI = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
 	EMAIL_TEST_USER: EmailStr = "test@example.com" # type: ignore
 	FIRST_SUPERUSER_USERNAME : str = "admin"

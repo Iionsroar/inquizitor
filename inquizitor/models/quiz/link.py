@@ -14,7 +14,7 @@ class QuizStudentLinkUpdate(QuizStudentLinkBase):
     quiz_id : Optional[int] = None
     student_id : Optional[int] = None
 
-class QuizStudentLinkInDBBase(QuizStudentLinkBase, PKModel):
+class QuizStudentLinkInDBBase(QuizStudentLinkBase):
     pass
 
 class QuizStudentLink(QuizStudentLinkInDBBase, table=True):
