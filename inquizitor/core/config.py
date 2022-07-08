@@ -34,7 +34,7 @@ class Settings(BaseSettings):
 	# if USE_SQLITE:
 	# 	SQLALCHEMY_DATABASE_URI = "sqlite:///inquizitor/data.db"
 	# else:
-	SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+	SQLALCHEMY_DATABASE_URI: str = os.getenv('DATABASE_URL')
 	# SQLALCHEMY_DATABASE_URI = f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_SERVER}:{POSTGRES_PORT}/{POSTGRES_DB}"
 
 	EMAIL_TEST_USER: EmailStr = "test@example.com" # type: ignore
