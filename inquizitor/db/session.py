@@ -3,13 +3,13 @@ from sqlmodel.pool import StaticPool
 
 from inquizitor.core.config import settings
 
-# if settings.USE_SQLITE:
-# 	engine = create_engine(
-# 	    settings.SQLALCHEMY_DATABASE_URI, 
-# 	    connect_args={"check_same_thread": False}
-# 	)
-# else:
-engine = create_engine(settings.SQLALCHEMY_DATABASE_URI)
+if settings.USE_SQLITE:
+	engine = create_engine(
+	    settings.SQLALCHEMY_DATABASE_URI, 
+	    connect_args={"check_same_thread": False}
+	)
+else:
+	engine = create_engine(settings.SQLALCHEMY_DATABASE_URI)
 
 test_engine = create_engine(
     "sqlite://", 
