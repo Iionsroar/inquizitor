@@ -3,6 +3,7 @@ import logging
 
 from inquizitor.db.session import engine, SessionLocal
 from inquizitor.db.init_db import init_db, drop_db
+from inquizitor.core.config import settings
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -24,5 +25,6 @@ def initial_data() -> None:
 	
 @click.command()
 def test():
-	click.echo('hello world!')
+	# click.echo('hello world!')
+	click.echo(settings.SQLALCHEMY_DATABASE_URI)
 
