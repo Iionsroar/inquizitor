@@ -28,6 +28,8 @@ async def login_access_token(
 	"""
 	OAuth2 compatible token login, get an access token for future requests
 	"""
+	Authorize.unset_jwt_cookies()
+	
 	user = crud.user.authenticate(
 		db, username=form_data.username, password=form_data.password
 	)
