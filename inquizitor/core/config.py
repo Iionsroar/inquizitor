@@ -15,7 +15,7 @@ class Settings(BaseSettings):
 	USE_SQLITE: bool = os.getenv("USE_SQLITE")
 
 	API_V1_STR: str = "/api/v1"
-	SECRET_KEY: str = 'ap-x5Z0HSNTYBtrt4F8vZH13uPnIaIpOgxQlRjOYdG0'
+	SECRET_KEY: str = "ap-x5Z0HSNTYBtrt4F8vZH13uPnIaIpOgxQlRjOYdG0"
 	ALGORITHM: str = "HS256"
 	ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 # 1 minute
 	REFRESH_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7 # 1 week
